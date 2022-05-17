@@ -1,4 +1,5 @@
 import Banner from "~/components/Banner";
+import Footer from "~/components/Footer";
 import Header from "~/components/Header";
 import HeadWrapper from "~/components/HeadWrapper";
 import LargeCard from "~/components/LargeCard";
@@ -9,10 +10,7 @@ export default function Home({ explorerData, cardsData }) {
   return (
     <div className="">
       <HeadWrapper title="Dio Airbnb" />
-
-      {/* Header */}
       <Header />
-      {/* Banner */}
       <Banner />
 
       <main className="max-w-7xl mx-auto px-8 sm:px-16">
@@ -21,7 +19,7 @@ export default function Home({ explorerData, cardsData }) {
           <div className="grid grid-cols-1 sm:grid-cols-2">
             {explorerData?.map((item) => (
               <SmallCard
-                key={item.link}
+                key={item.img}
                 img={item.img}
                 location={item.location}
                 distance={item.distance}
@@ -46,6 +44,7 @@ export default function Home({ explorerData, cardsData }) {
           buttonText="Get Inspired"
         />
       </main>
+      <Footer />
     </div>
   );
 }
